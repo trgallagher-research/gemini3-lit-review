@@ -111,9 +111,22 @@ git clone https://github.com/trgallagher-research/gemini3-lit-review.git
 
 1. Find the `input/pdfs` folder inside the tool's folder
 2. Copy all your PDF articles into this folder
-3. **Naming tip:** Include the author name and year in the filename so the tool can match them
-   - Good: `Smith_2023_screen_time.pdf` or `smith2023.pdf`
-   - The tool looks for author names and years to match PDFs to your citation list
+3. **Naming tip:** Include the author name and year somewhere in the filename so the tool can match them
+   - Good: `Smith_2023_screen_time.pdf` or `smith2023.pdf` or `downloaded_smith_2023.pdf`
+   - Bad: `article1.pdf` or `document.pdf` (no author/year to match)
+
+**The tool automatically renames your files!** You don't need to rename them yourself:
+- It matches your PDFs to citations by looking for author names and years in filenames
+- It creates numbered copies like `01_Smith_2023.pdf`, `02_Jones_2024.pdf`
+- Your original files in `input/pdfs/` are **not modified** - only copies are made
+
+Example of what you'll see:
+```
+Renaming PDFs to pdfs/...
+ 1. smith_screen_time_2023.pdf -> 01_Smith_2023.pdf
+ 2. jones_et_al_2024_study.pdf -> 02_Jones_2024.pdf
+ 3. brown2022.pdf -> 03_Brown_2022.pdf
+```
 
 ### Step 6: Run the Tool
 
